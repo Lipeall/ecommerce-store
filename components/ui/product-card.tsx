@@ -5,11 +5,18 @@ import Image from "next/image";
 import IconButton from "@/components/ui/icon-button";
 import { Expand, ShoppingCart } from "lucide-react";
 import Currency from "@/components/ui/currency";
+import { useRouter } from "next/navigation";
 
 interface ProductCardProps {
     data: Product;
 }
 const ProductCard = ({ data }: ProductCardProps) => {
+    const router = useRouter();
+
+    const handleClick = () => {
+        router.push(`/product/${data?.id}`);
+    };
+
     return (
         <div className="bg-white group cursor-pointer rounded-xl border p-3 space-y-4">
             <div className="aspect-square rounded-xl bg-gray-100 relative">
@@ -22,7 +29,7 @@ const ProductCard = ({ data }: ProductCardProps) => {
                 <div className="opacity-0 group-hover:opacity-100 transition absolute w-full px-6 bottom-5">
                     <div className="flex gap-x-6 justify-center">
                         <IconButton
-                            onClick={() => {}}
+                            onClick={handleClick}
                             icon={
                                 <Expand size={20} className="text-gray-600" />
                             }

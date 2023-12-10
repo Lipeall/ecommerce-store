@@ -22,7 +22,7 @@ export interface Color {
     value: string;
 }
 
-export interface Images {
+export interface Image {
     id: string;
     url: string;
 }
@@ -35,5 +35,5 @@ export interface Product {
     isFeatured: boolean;
     size: Size;
     color: Color;
-    images: Images[];
+    images: Image[];
 }
