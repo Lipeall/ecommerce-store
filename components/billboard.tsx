@@ -1,10 +1,11 @@
+import getBillboard from "@/actions/get-billboard";
 import { Billboard as BillboardType } from "@/types";
 
 interface BillboardProps {
     data: BillboardType;
 }
 
-const Billboard = ({ data }: BillboardProps) => {
+const Billboard = async ({ data }: BillboardProps) => {
     return (
         <div className="p-4 sm:p-6 lg:p-8 rounded-xl overflow-hidden">
             <div
